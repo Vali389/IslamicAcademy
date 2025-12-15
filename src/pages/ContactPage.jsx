@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import PageHero from '../components/PageHero';
 import AnimatedSection from '../components/AnimatedSection';
+import { useLanguage } from '../context/LanguageContext';
 
 const contactCards = [
   {
@@ -27,6 +28,7 @@ const contactCards = [
 ];
 
 const ContactPage = () => {
+  const { t, isUrdu } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     contact: '',
@@ -49,13 +51,13 @@ const ContactPage = () => {
   };
 
   return (
-    <div>
+    <div dir={isUrdu ? 'rtl' : 'ltr'}>
       {/* Hero Section */}
       <PageHero 
-        title="Contact Us"
-        titleUrdu="ہم سے رابطہ کریں"
-        subtitle="We'd love to hear from you! Reach out via WhatsApp, the form below, or email us."
-        subtitleUrdu="ہمیں آپ سے سن کر خوشی ہوگی! واٹس ایپ، فارم، یا ای میل کے ذریعے رابطہ کریں۔"
+        title={t.contact.title}
+        titleUrdu={isUrdu ? '' : 'ہم سے رابطہ کریں'}
+        subtitle={t.contact.subtitle}
+        subtitleUrdu={isUrdu ? '' : 'ہمیں آپ سے سن کر خوشی ہوگی! واٹس ایپ، فارم، یا ای میل کے ذریعے رابطہ کریں۔'}
       />
 
       <div className="py-12 md:py-20">

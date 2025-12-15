@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
 
 const HeroSection = () => {
+  const { t, isUrdu } = useLanguage();
+
   return (
     <section 
       className="relative"
@@ -25,33 +28,44 @@ const HeroSection = () => {
         <div className="absolute bottom-10 left-10 w-60 h-60 bg-gold/20 rounded-full blur-3xl"></div>
 
         {/* Content */}
-        <div className="z-10 flex flex-col gap-6 text-center max-w-4xl mx-auto">
+        <div className="z-10 flex flex-col gap-6 text-center max-w-4xl mx-auto" dir={isUrdu ? 'rtl' : 'ltr'}>
           {/* Badge */}
           <div className="flex justify-center animate-fade-up">
             <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-white text-sm">
               <span className="material-symbols-outlined text-primary text-lg">verified</span>
-              Trusted by 5000+ Students Worldwide
+              {t.hero.trusted}
             </span>
           </div>
 
           {/* Headings */}
           <div className="animate-fade-up-delay-1">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tight text-white">
-              Learn Qur'an Online With{' '}
-              <span className="text-primary">Qualified Ulema</span>
+              {isUrdu ? (
+                <>
+                  <span className="text-primary">{t.hero.qualified}</span>
+                  {' '}کے ساتھ آن لائن قرآن سیکھیں
+                </>
+              ) : (
+                <>
+                  Learn Qur'an Online With{' '}
+                  <span className="text-primary">{t.hero.qualified}</span>
+                </>
+              )}
             </h1>
-            <h2 
-              className="mt-4 text-xl sm:text-2xl font-medium text-white/90"
-              style={{ fontFamily: "'Times New Roman', serif" }}
-              dir="rtl"
-            >
-              مستند علماء کی زیر نگرانی قرآن آن لائن سیکھیں
-            </h2>
+            {!isUrdu && (
+              <h2 
+                className="mt-4 text-xl sm:text-2xl font-medium text-white/90"
+                style={{ fontFamily: "'Times New Roman', serif" }}
+                dir="rtl"
+              >
+                مستند علماء کی زیر نگرانی قرآن آن لائن سیکھیں
+              </h2>
+            )}
           </div>
 
           {/* Description */}
           <p className="max-w-2xl mx-auto text-base sm:text-lg font-normal leading-relaxed text-white/80 animate-fade-up-delay-2">
-            Join our global community and embark on a transformative journey of Quranic learning with certified scholars, from the comfort of your home.
+            {t.hero.subtitle}
           </p>
 
           {/* CTA Buttons */}
@@ -60,32 +74,32 @@ const HeroSection = () => {
               to="/registration"
               className="flex h-14 items-center justify-center overflow-hidden rounded-xl bg-primary px-8 text-base font-bold text-white shadow-lg shadow-primary/30 transition-all hover:scale-105 hover:shadow-xl hover:shadow-primary/40"
             >
-              <span>Book Free Demo Class</span>
-              <span className="mx-2">|</span>
-              <span style={{ fontFamily: "'Times New Roman', serif" }}>مفت ڈیمو کلاس</span>
+              {t.hero.cta1}
             </Link>
-            <Link 
-              to="/contact"
+            <a 
+              href="https://wa.me/919866763270"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex h-14 items-center justify-center gap-3 overflow-hidden rounded-xl bg-white/10 backdrop-blur-sm border-2 border-white/30 px-8 text-base font-bold text-white transition-all hover:bg-white/20 hover:scale-105"
             >
               <span className="material-symbols-outlined text-2xl">chat</span>
-              <span>Contact on WhatsApp</span>
-            </Link>
+              <span>{t.hero.cta2}</span>
+            </a>
           </div>
 
           {/* Features */}
           <div className="flex flex-wrap justify-center gap-6 mt-6 text-white/80 text-sm animate-fade-up-delay-4">
             <div className="flex items-center gap-2">
               <span className="material-symbols-outlined text-primary">check_circle</span>
-              <span>One-on-One Classes</span>
+              <span>{isUrdu ? 'انفرادی کلاسز' : 'One-on-One Classes'}</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="material-symbols-outlined text-primary">check_circle</span>
-              <span>Flexible Timings</span>
+              <span>{isUrdu ? 'لچکدار اوقات' : 'Flexible Timings'}</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="material-symbols-outlined text-primary">check_circle</span>
-              <span>Male & Female Teachers</span>
+              <span>{isUrdu ? 'جمعہ چھٹی' : 'Friday Holiday'}</span>
             </div>
           </div>
         </div>

@@ -1,5 +1,9 @@
+import { useLanguage } from '../context/LanguageContext';
+
 // Reusable Page Hero Component for all pages
 const PageHero = ({ title, titleUrdu, subtitle, subtitleUrdu }) => {
+  const { isUrdu } = useLanguage();
+
   return (
     <section 
       className="relative"
@@ -24,11 +28,11 @@ const PageHero = ({ title, titleUrdu, subtitle, subtitleUrdu }) => {
         <div className="absolute bottom-0 left-10 w-40 h-40 bg-gold/20 rounded-full blur-3xl"></div>
 
         {/* Content */}
-        <div className="z-10 flex flex-col gap-3 text-center max-w-4xl mx-auto">
+        <div className="z-10 flex flex-col gap-3 text-center max-w-4xl mx-auto" dir={isUrdu ? 'rtl' : 'ltr'}>
           <h1 className="text-4xl sm:text-5xl font-black leading-tight tracking-tight text-white animate-fade-up">
             {title}
           </h1>
-          {titleUrdu && (
+          {titleUrdu && !isUrdu && (
             <h2 
               className="text-2xl sm:text-3xl font-medium text-white/90 animate-fade-up-delay-1"
               style={{ fontFamily: "'Times New Roman', serif" }}
@@ -42,7 +46,7 @@ const PageHero = ({ title, titleUrdu, subtitle, subtitleUrdu }) => {
               {subtitle}
             </p>
           )}
-          {subtitleUrdu && (
+          {subtitleUrdu && !isUrdu && (
             <p 
               className="max-w-2xl mx-auto text-base font-normal leading-relaxed text-white/70 animate-fade-up-delay-3"
               style={{ fontFamily: "'Times New Roman', serif" }}

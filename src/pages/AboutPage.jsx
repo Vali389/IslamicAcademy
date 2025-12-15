@@ -1,5 +1,6 @@
 import PageHero from '../components/PageHero';
 import AnimatedSection from '../components/AnimatedSection';
+import { useLanguage } from '../context/LanguageContext';
 
 const teachers = [
   {
@@ -92,12 +93,14 @@ const TeacherCard = ({ teacher, index }) => {
 };
 
 const AboutPage = () => {
+  const { isUrdu } = useLanguage();
+
   return (
-    <div>
+    <div dir={isUrdu ? 'rtl' : 'ltr'}>
       {/* Hero Section */}
       <PageHero 
-        title="About Our Academy"
-        titleUrdu="ہماری اکیڈمی کے بارے میں"
+        title={isUrdu ? 'ہماری اکیڈمی کے بارے میں' : 'About NISBATH ACADEMY'}
+        titleUrdu={isUrdu ? '' : 'ہماری اکیڈمی کے بارے میں'}
         subtitle="We are dedicated to spreading the light of the Holy Quran to Muslims around the world through quality online education with qualified teachers."
         subtitleUrdu="ہم اہل اساتذہ کے ساتھ معیاری آن لائن تعلیم کے ذریعے دنیا بھر کے مسلمانوں تک قرآن پاک کی روشنی پھیلانے کے لیے وقف ہیں۔"
       />

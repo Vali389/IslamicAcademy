@@ -1,51 +1,90 @@
 import { Link } from 'react-router-dom';
 import AnimatedSection from './AnimatedSection';
-
-const courses = [
-  {
-    id: 1,
-    title: 'Nazira Quran',
-    urduTitle: 'ناظرہ قرآن',
-    description: 'Learn to read the Quran with proper pronunciation.',
-    image: 'https://images.unsplash.com/photo-1609599006353-e629aaabfeae?w=400&h=300&fit=crop&q=80',
-  },
-  {
-    id: 2,
-    title: 'Hifz (Memorization)',
-    urduTitle: 'حفظ',
-    description: 'Memorize the Holy Quran with expert guidance.',
-    image: 'https://images.unsplash.com/photo-1585036156171-384164a8c675?w=400&h=300&fit=crop&q=80',
-  },
-  {
-    id: 3,
-    title: 'Tajweed Rules',
-    urduTitle: 'تجوید',
-    description: 'Master the art of Quranic recitation.',
-    image: 'https://images.unsplash.com/photo-1542816417-0983c9c9ad53?w=400&h=300&fit=crop&q=80',
-  },
-  {
-    id: 4,
-    title: 'Alim Course',
-    urduTitle: 'عالم کورس',
-    description: 'In-depth study of Islamic sciences.',
-    image: 'https://images.unsplash.com/photo-1519817650390-64a93db51149?w=400&h=300&fit=crop&q=80',
-  },
-  {
-    id: 5,
-    title: 'Arabic Grammar',
-    urduTitle: 'عربی گرامر',
-    description: 'Understand the grammatical rules of the Quran.',
-    image: 'https://images.unsplash.com/photo-1579187707643-35646d22b596?w=400&h=300&fit=crop&q=80',
-  },
-];
+import { useLanguage } from '../context/LanguageContext';
 
 const CoursesSection = () => {
+  const { t, isUrdu } = useLanguage();
+
+  const courses = isUrdu ? [
+    {
+      id: 1,
+      title: 'ناظرہ قرآن',
+      description: 'صحیح تلفظ کے ساتھ قرآن پڑھنا سیکھیں۔',
+      price: '₹699/ماہ',
+      image: 'https://images.unsplash.com/photo-1609599006353-e629aaabfeae?w=400&h=300&fit=crop&q=80',
+    },
+    {
+      id: 2,
+      title: 'حفظ قرآن',
+      description: 'ماہر رہنمائی کے ساتھ قرآن حفظ کریں۔',
+      price: '₹24,999 مکمل',
+      image: 'https://images.unsplash.com/photo-1585036156171-384164a8c675?w=400&h=300&fit=crop&q=80',
+    },
+    {
+      id: 3,
+      title: 'تجوید',
+      description: 'قرآنی تلاوت کے فن میں مہارت حاصل کریں۔',
+      price: '₹699/ماہ',
+      image: 'https://images.unsplash.com/photo-1542816417-0983c9c9ad53?w=400&h=300&fit=crop&q=80',
+    },
+    {
+      id: 4,
+      title: 'قاری کورس',
+      description: 'ماہر قاری بنیں اور خوبصورت تلاوت سیکھیں۔',
+      price: '₹699/ماہ',
+      image: 'https://images.unsplash.com/photo-1519817650390-64a93db51149?w=400&h=300&fit=crop&q=80',
+    },
+    {
+      id: 5,
+      title: 'عربی گرامر',
+      description: 'قرآن کی زبان سمجھیں۔',
+      price: '₹699/ماہ',
+      image: 'https://images.unsplash.com/photo-1579187707643-35646d22b596?w=400&h=300&fit=crop&q=80',
+    },
+  ] : [
+    {
+      id: 1,
+      title: 'Nazira Quran',
+      description: 'Learn to read the Quran with proper pronunciation.',
+      price: '₹699/month',
+      image: 'https://images.unsplash.com/photo-1609599006353-e629aaabfeae?w=400&h=300&fit=crop&q=80',
+    },
+    {
+      id: 2,
+      title: 'Hifz (Memorization)',
+      description: 'Memorize the Holy Quran with expert guidance.',
+      price: '₹24,999 Full',
+      image: 'https://images.unsplash.com/photo-1585036156171-384164a8c675?w=400&h=300&fit=crop&q=80',
+    },
+    {
+      id: 3,
+      title: 'Tajweed Rules',
+      description: 'Master the art of Quranic recitation.',
+      price: '₹699/month',
+      image: 'https://images.unsplash.com/photo-1542816417-0983c9c9ad53?w=400&h=300&fit=crop&q=80',
+    },
+    {
+      id: 4,
+      title: 'Qari Course',
+      description: 'Become an expert reciter with beautiful recitation.',
+      price: '₹699/month',
+      image: 'https://images.unsplash.com/photo-1519817650390-64a93db51149?w=400&h=300&fit=crop&q=80',
+    },
+    {
+      id: 5,
+      title: 'Arabic Grammar',
+      description: 'Understand the language of the Quran.',
+      price: '₹699/month',
+      image: 'https://images.unsplash.com/photo-1579187707643-35646d22b596?w=400&h=300&fit=crop&q=80',
+    },
+  ];
+
   return (
-    <section className="py-16 px-4">
+    <section className="py-16 px-4" dir={isUrdu ? 'rtl' : 'ltr'}>
       <AnimatedSection className="flex flex-col items-center gap-4 pb-6 text-center">
-        <h2 className="text-4xl font-bold tracking-tight text-navy">Featured Courses | نمایاں کورسز</h2>
+        <h2 className="text-4xl font-bold tracking-tight text-navy">{t.courses.title}</h2>
         <p className="max-w-3xl text-base font-normal leading-normal text-gray-600">
-          Explore our wide range of courses, tailored to meet the needs of every student on their journey with the Quran.
+          {t.courses.subtitle}
         </p>
       </AnimatedSection>
 
@@ -62,14 +101,14 @@ const CoursesSection = () => {
               <div className="flex flex-1 flex-col justify-between p-4 pt-0">
                 <div className="mb-4">
                   <p className="text-lg font-bold text-navy">{course.title}</p>
-                  <p className="text-sm text-primary" style={{ fontFamily: "'Times New Roman', serif" }}>{course.urduTitle}</p>
                   <p className="text-sm font-normal text-gray-500 mt-1">{course.description}</p>
+                  <p className="text-sm font-bold text-primary mt-2">{course.price}</p>
                 </div>
                 <Link 
                   to="/courses"
                   className="flex h-10 w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-primary/20 text-sm font-bold text-primary hover:bg-primary/30 transition-colors"
                 >
-                  <span className="truncate">View Details</span>
+                  <span className="truncate">{t.courses.viewDetails}</span>
                 </Link>
               </div>
             </div>

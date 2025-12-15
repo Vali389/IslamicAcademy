@@ -1,41 +1,61 @@
 import AnimatedSection from './AnimatedSection';
-
-const features = [
-  {
-    icon: 'school',
-    title: 'Qualified Ulema',
-    urduTitle: 'مستند علماء',
-    description: 'Learn from certified and experienced Islamic scholars.',
-  },
-  {
-    icon: 'schedule',
-    title: 'Flexible Timings',
-    urduTitle: 'لچکدار اوقات',
-    description: 'Schedule classes at your convenience, 24/7.',
-  },
-  {
-    icon: 'person',
-    title: 'One-on-One Classes',
-    urduTitle: 'انفرادی کلاسز',
-    description: 'Get personalized attention with dedicated tutors.',
-  },
-  {
-    icon: 'escalator_warning',
-    title: 'For Kids & Adults',
-    urduTitle: 'بچوں اور بڑوں کے لیے',
-    description: 'Courses designed for all age groups and levels.',
-  },
-];
+import { useLanguage } from '../context/LanguageContext';
 
 const FeatureSection = () => {
+  const { t, isUrdu } = useLanguage();
+
+  const features = isUrdu ? [
+    {
+      icon: 'school',
+      title: 'مستند علماء',
+      description: 'تصدیق شدہ اور تجربہ کار اسلامی علماء سے سیکھیں۔',
+    },
+    {
+      icon: 'schedule',
+      title: 'لچکدار اوقات',
+      description: 'اپنی سہولت کے مطابق کلاسز شیڈول کریں، 24/7۔',
+    },
+    {
+      icon: 'person',
+      title: 'انفرادی کلاسز',
+      description: 'مخصوص ٹیوٹرز کے ساتھ ذاتی توجہ حاصل کریں۔',
+    },
+    {
+      icon: 'event_busy',
+      title: 'جمعہ چھٹی',
+      description: 'ہفتے میں 6 دن کلاسز۔ جمعہ کا دن چھٹی۔',
+    },
+  ] : [
+    {
+      icon: 'school',
+      title: 'Qualified Ulema',
+      description: 'Learn from certified and experienced Islamic scholars.',
+    },
+    {
+      icon: 'schedule',
+      title: 'Flexible Timings',
+      description: 'Schedule classes at your convenience, 24/7.',
+    },
+    {
+      icon: 'person',
+      title: 'One-on-One Classes',
+      description: 'Get personalized attention with dedicated tutors.',
+    },
+    {
+      icon: 'event_busy',
+      title: 'Friday Holiday',
+      description: '6 days a week classes. Friday is holiday.',
+    },
+  ];
+
   return (
-    <section className="flex flex-col gap-10 px-4 py-16">
+    <section className="flex flex-col gap-10 px-4 py-16" dir={isUrdu ? 'rtl' : 'ltr'}>
       <AnimatedSection className="flex flex-col items-center gap-4 text-center">
         <h2 className="text-4xl font-bold tracking-tight text-navy">
-          Key Benefits | کلیدی فوائد
+          {t.features.title}
         </h2>
         <p className="max-w-3xl text-base font-normal leading-normal text-gray-600">
-          Discover the advantages of learning with our qualified and experienced tutors who are dedicated to your spiritual growth.
+          {t.features.subtitle}
         </p>
       </AnimatedSection>
 
@@ -46,7 +66,6 @@ const FeatureSection = () => {
               <span className="material-symbols-outlined mx-auto text-4xl text-gold">{feature.icon}</span>
               <div className="flex flex-col gap-1">
                 <h3 className="text-lg font-bold text-navy">{feature.title}</h3>
-                <p className="text-sm text-primary font-medium" style={{ fontFamily: "'Times New Roman', serif" }}>{feature.urduTitle}</p>
                 <p className="text-sm font-normal leading-normal text-gray-500 mt-1">{feature.description}</p>
               </div>
             </div>

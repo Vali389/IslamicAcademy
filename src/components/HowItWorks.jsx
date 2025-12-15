@@ -1,33 +1,21 @@
 import AnimatedSection from './AnimatedSection';
-
-const steps = [
-  {
-    number: 1,
-    title: 'Register',
-    urduTitle: 'رجسٹر کریں',
-    description: 'Fill out a simple form to create your account and join our academy.',
-  },
-  {
-    number: 2,
-    title: 'Take a Free Demo',
-    urduTitle: 'مفت ڈیمو لیں',
-    description: 'Schedule a free one-on-one demo class with one of our expert tutors.',
-  },
-  {
-    number: 3,
-    title: 'Start Regular Classes',
-    urduTitle: 'باقاعدہ کلاسز شروع کریں',
-    description: 'Once satisfied, confirm your schedule and begin your learning journey.',
-  },
-];
+import { useLanguage } from '../context/LanguageContext';
 
 const HowItWorks = () => {
+  const { t, isUrdu } = useLanguage();
+
+  const steps = t.howItWorks.steps.map((step, index) => ({
+    number: index + 1,
+    title: step.title,
+    description: step.description,
+  }));
+
   return (
-    <section className="py-16 px-4">
+    <section className="py-16 px-4" dir={isUrdu ? 'rtl' : 'ltr'}>
       <AnimatedSection className="text-center mb-12">
-        <h2 className="text-4xl font-bold tracking-tight text-navy">How It Works | یہ کیسے کام کرتا ہے</h2>
+        <h2 className="text-4xl font-bold tracking-tight text-navy">{t.howItWorks.title}</h2>
         <p className="mt-4 max-w-3xl mx-auto text-base font-normal leading-normal text-gray-600">
-          Start your learning journey in three simple steps. We've made the process seamless and straightforward for you.
+          {t.howItWorks.subtitle}
         </p>
       </AnimatedSection>
 
@@ -42,7 +30,6 @@ const HowItWorks = () => {
                 {step.number}
               </div>
               <h3 className="text-xl font-bold text-navy mt-4">{step.title}</h3>
-              <p className="text-primary font-medium" style={{ fontFamily: "'Times New Roman', serif" }}>{step.urduTitle}</p>
               <p className="text-gray-500">{step.description}</p>
             </div>
           </AnimatedSection>

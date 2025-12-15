@@ -2,8 +2,10 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero';
 import AnimatedSection from '../components/AnimatedSection';
+import { useLanguage } from '../context/LanguageContext';
 
 const LoginPage = () => {
+  const { isUrdu } = useLanguage();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -25,12 +27,12 @@ const LoginPage = () => {
   };
 
   return (
-    <div>
+    <div dir={isUrdu ? 'rtl' : 'ltr'}>
       {/* Hero Section */}
       <PageHero 
-        title="Student Login"
-        titleUrdu="طالب علم لاگ ان"
-        subtitle="Access your account to manage classes, track progress, and more."
+        title={isUrdu ? 'طالب علم لاگ ان' : 'Student Login'}
+        titleUrdu={isUrdu ? '' : 'طالب علم لاگ ان'}
+        subtitle={isUrdu ? 'اپنے اکاؤنٹ تک رسائی حاصل کریں۔' : 'Access your account to manage classes, track progress, and more.'}
       />
 
       <div className="py-12 md:py-20">

@@ -2,8 +2,10 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero';
 import AnimatedSection from '../components/AnimatedSection';
+import { useLanguage } from '../context/LanguageContext';
 
 const RegistrationPage = () => {
+  const { t, isUrdu } = useLanguage();
   const [formData, setFormData] = useState({
     studentName: '',
     guardianName: '',
@@ -37,13 +39,13 @@ const RegistrationPage = () => {
   ];
 
   return (
-    <div>
+    <div dir={isUrdu ? 'rtl' : 'ltr'}>
       {/* Hero Section */}
       <PageHero 
-        title="Student Registration"
-        titleUrdu="طالب علم کی رجسٹریشن"
-        subtitle="Register now and book your FREE trial class with one of our qualified teachers."
-        subtitleUrdu="ابھی رجسٹر کریں اور ہمارے اہل اساتذہ میں سے ایک کے ساتھ اپنی مفت ٹرائل کلاس بک کریں۔"
+        title={isUrdu ? 'طالب علم کی رجسٹریشن' : 'Student Registration'}
+        titleUrdu={isUrdu ? '' : 'طالب علم کی رجسٹریشن'}
+        subtitle={isUrdu ? 'ابھی رجسٹر کریں اور ہمارے اہل اساتذہ میں سے ایک کے ساتھ اپنی مفت ٹرائل کلاس بک کریں۔' : 'Register now and book your FREE trial class with one of our qualified teachers.'}
+        subtitleUrdu={isUrdu ? '' : 'ابھی رجسٹر کریں اور ہمارے اہل اساتذہ میں سے ایک کے ساتھ اپنی مفت ٹرائل کلاس بک کریں۔'}
       />
 
       <div className="py-12 md:py-20">
