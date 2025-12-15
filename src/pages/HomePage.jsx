@@ -394,60 +394,6 @@ const FAQSection = () => {
   );
 };
 
-// Newsletter Section
-const NewsletterSection = () => {
-  const { isUrdu } = useLanguage();
-  const [email, setEmail] = useState('');
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert(isUrdu ? 'شکریہ! آپ کو جلد اپ ڈیٹس ملیں گی۔' : 'Thank you! You will receive updates soon.');
-    setEmail('');
-  };
-
-  return (
-    <section 
-      className="py-12"
-      style={{ marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', width: '100vw', backgroundColor: '#0d1b12' }}
-    >
-      <div className="max-w-4xl mx-auto px-4 text-center" dir={isUrdu ? 'rtl' : 'ltr'}>
-        <AnimatedSection>
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <span className="material-symbols-outlined text-primary text-3xl">mail</span>
-            <h2 className="text-2xl font-bold text-white">
-              {isUrdu ? 'ہماری اپ ڈیٹس حاصل کریں' : 'Get Updates & Offers'}
-            </h2>
-          </div>
-          <p className="text-white/70 mb-6">
-            {isUrdu 
-              ? 'نئے کورسز، خصوصی پیشکشوں اور اسلامی تعلیمات کے بارے میں اپ ڈیٹس حاصل کریں۔'
-              : 'Subscribe to receive updates about new courses, special offers, and Islamic teachings.'}
-          </p>
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder={isUrdu ? 'آپ کا ای میل' : 'Your email address'}
-              required
-              className="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-primary"
-            />
-            <button
-              type="submit"
-              className="px-6 py-3 rounded-lg bg-primary text-white font-bold hover:scale-105 transition-transform"
-            >
-              {isUrdu ? 'سبسکرائب کریں' : 'Subscribe'}
-            </button>
-          </form>
-          <p className="text-white/50 text-sm mt-4">
-            {isUrdu ? 'ہم آپ کی معلومات کو محفوظ رکھتے ہیں۔' : 'We respect your privacy and keep your information safe.'}
-          </p>
-        </AnimatedSection>
-      </div>
-    </section>
-  );
-};
-
 // CTA Section with better colors
 const CTASection = () => {
   const { isUrdu } = useLanguage();
@@ -510,7 +456,6 @@ const HomePage = () => {
       <CoursesSection />
       <HowItWorks />
       <TestimonialsCarousel />
-      <NewsletterSection />
       <CTASection />
     </div>
   );
