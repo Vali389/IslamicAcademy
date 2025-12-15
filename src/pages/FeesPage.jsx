@@ -16,7 +16,7 @@ const FeesPage = () => {
       yearlyPeriod: isUrdu ? 'فی سال' : '/year',
       popular: false,
       features: isUrdu ? [
-        'ہفتے میں 6 دن (جمعہ چھٹی)',
+        'ہفتے میں ۶ دن (جمعہ چھٹی)',
         'انفرادی کلاسز',
         'مستند اساتذہ',
         'صحیح تلفظ',
@@ -38,7 +38,7 @@ const FeesPage = () => {
       yearlyPeriod: isUrdu ? 'فی سال' : '/year',
       popular: true,
       features: isUrdu ? [
-        'ہفتے میں 6 دن (جمعہ چھٹی)',
+        'ہفتے میں ۶ دن (جمعہ چھٹی)',
         'انفرادی کلاسز',
         'اعلی تجوید کے قواعد',
         'مخارج الحروف',
@@ -60,7 +60,7 @@ const FeesPage = () => {
       yearlyPeriod: isUrdu ? 'فی سال' : '/year',
       popular: false,
       features: isUrdu ? [
-        'ہفتے میں 6 دن (جمعہ چھٹی)',
+        'ہفتے میں ۶ دن (جمعہ چھٹی)',
         'ماہر قاری سے سیکھیں',
         'تلاوت کا فن',
         'مختلف قراءات',
@@ -82,7 +82,7 @@ const FeesPage = () => {
       yearlyPeriod: isUrdu ? 'فی سال' : '/year',
       popular: false,
       features: isUrdu ? [
-        'ہفتے میں 6 دن (جمعہ چھٹی)',
+        'ہفتے میں ۶ دن (جمعہ چھٹی)',
         'نحو اور صرف',
         'جملے کی ساخت',
         'قرآنی الفاظ',
@@ -106,7 +106,7 @@ const FeesPage = () => {
       popular: true,
       special: true,
       features: isUrdu ? [
-        'ہفتے میں 6 دن (جمعہ چھٹی)',
+        'ہفتے میں ۶ دن (جمعہ چھٹی)',
         'مخصوص حفظ کوچ',
         'ذاتی منصوبہ',
         'ہفتہ وار جائزے',
@@ -229,7 +229,7 @@ const FeesPage = () => {
             </div>
             <p className="text-yellow-700 text-sm">
               {isUrdu 
-                ? 'تمام کورسز ہفتے میں 6 دن چلتے ہیں۔ جمعہ کا دن چھٹی کا دن ہے۔' 
+                ? 'تمام کورسز ہفتے میں ۶ دن چلتے ہیں۔ جمعہ کا دن چھٹی کا دن ہے۔' 
                 : 'All courses run 6 days a week. Friday is a holiday for all students.'}
             </p>
           </div>

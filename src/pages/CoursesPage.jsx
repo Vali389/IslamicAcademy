@@ -11,7 +11,7 @@ const CoursesPage = () => {
       id: 1,
       title: isUrdu ? 'ناظرہ قرآن' : 'Nazira Quran',
       description: isUrdu 
-        ? 'قرآن مجید کو صحیح تلفظ کے ساتھ پڑھنا سیکھیں۔ یہ کورس بنیادی عربی حروف، ان کی آوازوں، اور قرآنی الفاظ کی صحیح ادائیگی پر مشتمل ہے۔ ہمارے تجربہ کار اساتذہ آپ کو قدم بہ قدم رہنمائی کریں گے تاکہ آپ روانی سے قرآن پڑھ سکیں۔ ہر عمر کے ابتدائی سیکھنے والوں کے لیے بہترین۔ ہفتے میں 6 دن کلاسز ہوتی ہیں۔'
+        ? 'قرآن مجید کو صحیح تلفظ کے ساتھ پڑھنا سیکھیں۔ یہ کورس بنیادی عربی حروف، ان کی آوازوں، اور قرآنی الفاظ کی صحیح ادائیگی پر مشتمل ہے۔ ہمارے تجربہ کار اساتذہ آپ کو قدم بہ قدم رہنمائی کریں گے تاکہ آپ روانی سے قرآن پڑھ سکیں۔ ہر عمر کے ابتدائی سیکھنے والوں کے لیے بہترین۔ ہفتے میں ۶ دن کلاسز ہوتی ہیں۔'
         : 'Learn to read the Holy Quran with proper pronunciation and basic Tajweed rules. This comprehensive course covers Arabic alphabets, their sounds, and correct articulation of Quranic words. Our experienced teachers guide you step by step from basics to fluent reading. You will learn the proper Makharij (articulation points) and basic rules of stopping and continuing. Perfect for beginners of all ages who want to start their Quranic journey. Classes are held 6 days a week with Friday as holiday.',
       age: isUrdu ? 'بچے اور بڑے' : 'Kids & Adults',
       duration: isUrdu ? 'لچکدار' : 'Flexible',
@@ -196,7 +196,7 @@ const CoursesPage = () => {
             <div className="flex items-center justify-center gap-2">
               <span className="material-symbols-outlined text-yellow-600">event_busy</span>
               <span className="text-yellow-800 font-medium">
-                {isUrdu ? 'جمعہ کا دن چھٹی ہے - تمام کورسز ہفتے میں 6 دن' : 'Friday is Holiday - All courses run 6 days/week'}
+                {isUrdu ? 'جمعہ کا دن چھٹی ہے - تمام کورسز ہفتے میں ۶ دن' : 'Friday is Holiday - All courses run 6 days/week'}
               </span>
             </div>
           </div>

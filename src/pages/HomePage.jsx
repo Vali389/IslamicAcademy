@@ -40,7 +40,7 @@ const WhyChooseUs = () => {
     {
       icon: 'event_busy',
       title: 'جمعہ چھٹی',
-      description: 'ہفتے میں 6 دن کلاسز۔ جمعہ کا دن چھٹی کا دن ہے۔',
+      description: 'ہفتے میں ۶ دن کلاسز۔ جمعہ کا دن چھٹی کا دن ہے۔',
     },
   ] : [
     {

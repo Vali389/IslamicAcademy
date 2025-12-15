@@ -23,7 +23,7 @@ const FeatureSection = () => {
     {
       icon: 'event_busy',
       title: 'جمعہ چھٹی',
-      description: 'ہفتے میں 6 دن کلاسز۔ جمعہ کا دن چھٹی۔',
+      description: 'ہفتے میں ۶ دن کلاسز۔ جمعہ کا دن چھٹی۔',
     },
   ] : [
     {
