@@ -1,119 +1,221 @@
+import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero';
 import AnimatedSection from '../components/AnimatedSection';
 import { useLanguage } from '../context/LanguageContext';
 
-const teachers = [
-  {
-    id: 1,
-    name: 'Ahmed Ali',
-    title: 'Ijazah in Tajweed',
-    description: 'An experienced teacher dedicated to instilling a love for the Quran in his students.',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&q=80',
-    badges: ['Hafiz', 'Alim'],
-    experience: '15+ years',
-  },
-  {
-    id: 2,
-    name: 'Fatima Zahra',
-    title: 'Masters in Islamic Studies',
-    description: 'Specializes in teaching female students and children with a gentle and patient approach.',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&q=80',
-    badges: ['Qaria', 'Hafiza'],
-    experience: '10+ years',
-  },
-  {
-    id: 3,
-    name: 'Yusuf Khan',
-    title: 'Expert in Qira\'at',
-    description: 'A renowned Qari with a passion for teaching the different styles of Quranic recitation.',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&q=80',
-    badges: ['Hafiz', 'Qari'],
-    experience: '12+ years',
-  },
-  {
-    id: 4,
-    name: 'Aisha Begum',
-    title: 'PhD in Quranic Sciences',
-    description: 'Focuses on Tafsir and the deeper meanings of the Quranic text for advanced students.',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&q=80',
-    badges: ['Alimah', 'PhD'],
-    experience: '20+ years',
-  },
-];
-
-const values = [
-  {
-    icon: 'auto_stories',
-    title: 'Authentic Teaching',
-    description: 'We follow traditional methods of Quranic education passed down through generations.',
-  },
-  {
-    icon: 'favorite',
-    title: 'Passion for Learning',
-    description: 'Our teachers are passionate about instilling a love for the Quran in every student.',
-  },
-  {
-    icon: 'handshake',
-    title: 'Student-Centered',
-    description: 'Every student is unique, and we tailor our approach to meet individual needs.',
-  },
-  {
-    icon: 'diversity_3',
-    title: 'Inclusive Community',
-    description: 'We welcome students from all backgrounds and skill levels.',
-  },
-];
-
-const TeacherCard = ({ teacher, index }) => {
-  return (
-    <AnimatedSection delay={index * 100}>
-      <div className="text-center bg-white p-6 rounded-xl shadow-sm border border-gray-200/80 hover-lift h-full">
-        <img 
-          className="w-28 h-28 mx-auto rounded-full object-cover border-4 border-primary/20"
-          src={teacher.image}
-          alt={`Portrait of ${teacher.name}`}
-        />
-        <h4 className="mt-4 text-lg font-bold text-gray-900">{teacher.name}</h4>
-        <p className="mt-1 text-sm text-primary font-medium">{teacher.title}</p>
-        <p className="text-xs text-gray-500 mt-1">{teacher.experience} Experience</p>
-        <p className="mt-2 text-sm text-gray-600">{teacher.description}</p>
-        <div className="mt-4 flex justify-center gap-2 flex-wrap">
-          {teacher.badges.map((badge, idx) => (
-            <span 
-              key={idx}
-              className="inline-block bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-full"
-            >
-              {badge}
-            </span>
-          ))}
-        </div>
-      </div>
-    </AnimatedSection>
-  );
-};
-
 const AboutPage = () => {
   const { isUrdu } = useLanguage();
+
+  const teachers = isUrdu ? [
+    {
+      id: 1,
+      name: 'احمد علی',
+      title: 'تجوید میں اجازت',
+      description: 'ایک تجربہ کار استاد جو اپنے طلباء میں قرآن سے محبت پیدا کرنے کے لیے وقف ہیں۔',
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&q=80',
+      badges: ['حافظ', 'عالم'],
+      experience: '15+ سال',
+    },
+    {
+      id: 2,
+      name: 'فاطمہ زہرا',
+      title: 'اسلامی علوم میں ماسٹرز',
+      description: 'خواتین طلباء اور بچوں کو نرم اور صبر والے انداز میں پڑھانے میں ماہر۔',
+      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&q=80',
+      badges: ['قاریہ', 'حافظہ'],
+      experience: '10+ سال',
+    },
+    {
+      id: 3,
+      name: 'یوسف خان',
+      title: 'قراءات میں ماہر',
+      description: 'مختلف انداز کی قرآنی تلاوت سکھانے کا شوق رکھنے والے معروف قاری۔',
+      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&q=80',
+      badges: ['حافظ', 'قاری'],
+      experience: '12+ سال',
+    },
+    {
+      id: 4,
+      name: 'عائشہ بیگم',
+      title: 'قرآنی علوم میں پی ایچ ڈی',
+      description: 'اعلی طلباء کے لیے تفسیر اور قرآنی متن کے گہرے معانی پر توجہ دیتی ہیں۔',
+      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&q=80',
+      badges: ['عالمہ', 'پی ایچ ڈی'],
+      experience: '20+ سال',
+    },
+  ] : [
+    {
+      id: 1,
+      name: 'Ahmed Ali',
+      title: 'Ijazah in Tajweed',
+      description: 'An experienced teacher dedicated to instilling a love for the Quran in his students.',
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&q=80',
+      badges: ['Hafiz', 'Alim'],
+      experience: '15+ years',
+    },
+    {
+      id: 2,
+      name: 'Fatima Zahra',
+      title: 'Masters in Islamic Studies',
+      description: 'Specializes in teaching female students and children with a gentle and patient approach.',
+      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&q=80',
+      badges: ['Qaria', 'Hafiza'],
+      experience: '10+ years',
+    },
+    {
+      id: 3,
+      name: 'Yusuf Khan',
+      title: 'Expert in Qira\'at',
+      description: 'A renowned Qari with a passion for teaching the different styles of Quranic recitation.',
+      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&q=80',
+      badges: ['Hafiz', 'Qari'],
+      experience: '12+ years',
+    },
+    {
+      id: 4,
+      name: 'Aisha Begum',
+      title: 'PhD in Quranic Sciences',
+      description: 'Focuses on Tafsir and the deeper meanings of the Quranic text for advanced students.',
+      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&q=80',
+      badges: ['Alimah', 'PhD'],
+      experience: '20+ years',
+    },
+  ];
+
+  const values = isUrdu ? [
+    {
+      icon: 'auto_stories',
+      title: 'مستند تعلیم',
+      description: 'ہم نسل در نسل منتقل ہونے والے قرآنی تعلیم کے روایتی طریقوں پر عمل کرتے ہیں۔',
+    },
+    {
+      icon: 'favorite',
+      title: 'سیکھنے کا جذبہ',
+      description: 'ہمارے اساتذہ ہر طالب علم میں قرآن سے محبت پیدا کرنے کے لیے پرجوش ہیں۔',
+    },
+    {
+      icon: 'handshake',
+      title: 'طالب علم پر مرکوز',
+      description: 'ہر طالب علم منفرد ہے، اور ہم انفرادی ضروریات کو پورا کرنے کے لیے اپنا طریقہ تیار کرتے ہیں۔',
+    },
+    {
+      icon: 'diversity_3',
+      title: 'جامع برادری',
+      description: 'ہم تمام پس منظر اور مہارت کی سطحوں کے طلباء کا خیرمقدم کرتے ہیں۔',
+    },
+  ] : [
+    {
+      icon: 'auto_stories',
+      title: 'Authentic Teaching',
+      description: 'We follow traditional methods of Quranic education passed down through generations.',
+    },
+    {
+      icon: 'favorite',
+      title: 'Passion for Learning',
+      description: 'Our teachers are passionate about instilling a love for the Quran in every student.',
+    },
+    {
+      icon: 'handshake',
+      title: 'Student-Centered',
+      description: 'Every student is unique, and we tailor our approach to meet individual needs.',
+    },
+    {
+      icon: 'diversity_3',
+      title: 'Inclusive Community',
+      description: 'We welcome students from all backgrounds and skill levels.',
+    },
+  ];
+
+  const stats = isUrdu ? [
+    { value: '10+', label: 'سال کا تجربہ' },
+    { value: '5000+', label: 'طلباء کو پڑھایا' },
+    { value: '100+', label: 'اہل اساتذہ' },
+    { value: '50+', label: 'ممالک میں خدمات' },
+  ] : [
+    { value: '10+', label: 'Years Experience' },
+    { value: '5000+', label: 'Students Taught' },
+    { value: '100+', label: 'Qualified Teachers' },
+    { value: '50+', label: 'Countries Served' },
+  ];
+
+  const learningFeatures = isUrdu ? [
+    {
+      icon: 'security',
+      title: 'محفوظ اور باعزت ماحول',
+      description: 'تمام طلباء کے سیکھنے اور بڑھنے کے لیے ایک محفوظ اور حوصلہ افزا جگہ۔',
+    },
+    {
+      icon: 'person',
+      title: 'انفرادی توجہ',
+      description: 'ہر طالب علم کی رفتار اور ضروریات کے مطابق ذاتی کلاسز۔',
+    },
+    {
+      icon: 'school',
+      title: 'اسلامی اصولوں کی پابندی',
+      description: 'تمام تدریس اور تعامل اسلامی آداب کے مطابق کیے جاتے ہیں۔',
+    },
+  ] : [
+    {
+      icon: 'security',
+      title: 'Safe & Respectful Atmosphere',
+      description: 'A secure and encouraging space for all students to learn and grow.',
+    },
+    {
+      icon: 'person',
+      title: 'One-on-One Attention',
+      description: 'Personalized classes to cater to the individual pace and needs of each student.',
+    },
+    {
+      icon: 'school',
+      title: 'Adherence to Islamic Principles',
+      description: 'All teaching and interactions are conducted in accordance with Islamic etiquette.',
+    },
+  ];
+
+  const TeacherCard = ({ teacher, index }) => {
+    return (
+      <AnimatedSection delay={index * 100}>
+        <div className="text-center bg-white p-6 rounded-xl shadow-sm border border-gray-200/80 hover-lift h-full">
+          <img 
+            className="w-28 h-28 mx-auto rounded-full object-cover border-4 border-primary/20"
+            src={teacher.image}
+            alt={teacher.name}
+          />
+          <h4 className="mt-4 text-lg font-bold text-gray-900">{teacher.name}</h4>
+          <p className="mt-1 text-sm text-primary font-medium">{teacher.title}</p>
+          <p className="text-xs text-gray-500 mt-1">{teacher.experience} {isUrdu ? 'تجربہ' : 'Experience'}</p>
+          <p className="mt-2 text-sm text-gray-600">{teacher.description}</p>
+          <div className="mt-4 flex justify-center gap-2 flex-wrap">
+            {teacher.badges.map((badge, idx) => (
+              <span 
+                key={idx}
+                className="inline-block bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-full"
+              >
+                {badge}
+              </span>
+            ))}
+          </div>
+        </div>
+      </AnimatedSection>
+    );
+  };
 
   return (
     <div dir={isUrdu ? 'rtl' : 'ltr'}>
       {/* Hero Section */}
       <PageHero 
-        title={isUrdu ? 'ہماری اکیڈمی کے بارے میں' : 'About NISBATH ACADEMY'}
+        title={isUrdu ? 'نصبۃ اکیڈمی کے بارے میں' : 'About NISBATH ACADEMY'}
         titleUrdu={isUrdu ? '' : 'ہماری اکیڈمی کے بارے میں'}
-        subtitle="We are dedicated to spreading the light of the Holy Quran to Muslims around the world through quality online education with qualified teachers."
-        subtitleUrdu="ہم اہل اساتذہ کے ساتھ معیاری آن لائن تعلیم کے ذریعے دنیا بھر کے مسلمانوں تک قرآن پاک کی روشنی پھیلانے کے لیے وقف ہیں۔"
+        subtitle={isUrdu 
+          ? 'ہم اہل اساتذہ کے ساتھ معیاری آن لائن تعلیم کے ذریعے دنیا بھر کے مسلمانوں تک قرآن پاک کی روشنی پھیلانے کے لیے وقف ہیں۔'
+          : 'We are dedicated to spreading the light of the Holy Quran to Muslims around the world through quality online education with qualified teachers.'}
+        subtitleUrdu={isUrdu ? '' : 'ہم اہل اساتذہ کے ساتھ معیاری آن لائن تعلیم کے ذریعے دنیا بھر کے مسلمانوں تک قرآن پاک کی روشنی پھیلانے کے لیے وقف ہیں۔'}
       />
 
       <div className="py-12 md:py-20">
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {[
-            { value: '10+', label: 'Years Experience' },
-            { value: '5000+', label: 'Students Taught' },
-            { value: '100+', label: 'Qualified Teachers' },
-            { value: '50+', label: 'Countries Served' },
-          ].map((stat, index) => (
+          {stats.map((stat, index) => (
             <AnimatedSection key={index} delay={index * 100}>
               <div className="text-center p-6 bg-primary/5 rounded-xl hover-lift">
                 <span className="text-4xl font-black text-primary">{stat.value}</span>
@@ -127,7 +229,7 @@ const AboutPage = () => {
         <div className="mt-16 md:mt-24">
           <AnimatedSection>
             <h2 className="text-center text-3xl font-bold tracking-tight text-gray-900">
-              Our Mission & Vision
+              {isUrdu ? 'ہمارا مشن اور وژن' : 'Our Mission & Vision'}
             </h2>
           </AnimatedSection>
           <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2">
@@ -140,12 +242,14 @@ const AboutPage = () => {
                   alt="A beautiful mosque interior with intricate geometric patterns"
                 />
                 <div className="p-6 flex flex-col flex-grow">
-                  <div className="flex items-center gap-3 mb-3">
+                  <div className={`flex items-center gap-3 mb-3 ${isUrdu ? 'flex-row-reverse' : ''}`}>
                     <span className="material-symbols-outlined text-primary text-3xl">flag</span>
-                    <h3 className="text-xl font-bold text-gray-900">Our Mission</h3>
+                    <h3 className="text-xl font-bold text-gray-900">{isUrdu ? 'ہمارا مشن' : 'Our Mission'}</h3>
                   </div>
                   <p className="text-gray-600 flex-grow">
-                    Our mission is to spread the authentic knowledge of the Holy Quran to Muslims all over the world, making it accessible for everyone to learn and understand.
+                    {isUrdu 
+                      ? 'ہمارا مشن دنیا بھر کے مسلمانوں تک قرآن پاک کا مستند علم پھیلانا ہے، اسے سب کے لیے سیکھنے اور سمجھنے کے لیے قابل رسائی بنانا۔'
+                      : 'Our mission is to spread the authentic knowledge of the Holy Quran to Muslims all over the world, making it accessible for everyone to learn and understand.'}
                   </p>
                 </div>
               </div>
@@ -160,12 +264,14 @@ const AboutPage = () => {
                   alt="Close-up of an open Quran with golden light"
                 />
                 <div className="p-6 flex flex-col flex-grow">
-                  <div className="flex items-center gap-3 mb-3">
+                  <div className={`flex items-center gap-3 mb-3 ${isUrdu ? 'flex-row-reverse' : ''}`}>
                     <span className="material-symbols-outlined text-primary text-3xl">visibility</span>
-                    <h3 className="text-xl font-bold text-gray-900">Our Vision</h3>
+                    <h3 className="text-xl font-bold text-gray-900">{isUrdu ? 'ہمارا وژن' : 'Our Vision'}</h3>
                   </div>
                   <p className="text-gray-600 flex-grow">
-                    Our vision is to become a leading online center for Islamic and Quranic education, fostering a global community of knowledgeable and devout Muslims.
+                    {isUrdu 
+                      ? 'ہمارا وژن اسلامی اور قرآنی تعلیم کے لیے ایک سرکردہ آن لائن مرکز بننا ہے، علم رکھنے والے اور متقی مسلمانوں کی عالمی برادری کو فروغ دینا۔'
+                      : 'Our vision is to become a leading online center for Islamic and Quranic education, fostering a global community of knowledgeable and devout Muslims.'}
                   </p>
                 </div>
               </div>
@@ -177,7 +283,7 @@ const AboutPage = () => {
         <div className="mt-16 md:mt-24">
           <AnimatedSection>
             <h2 className="text-center text-3xl font-bold tracking-tight text-gray-900 mb-10">
-              Our Core Values
+              {isUrdu ? 'ہماری بنیادی اقدار' : 'Our Core Values'}
             </h2>
           </AnimatedSection>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -200,32 +306,24 @@ const AboutPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <AnimatedSection animation="fade-left">
               <div>
-                <h2 className="text-3xl font-bold tracking-tight text-gray-900">Our Islamic Learning Environment</h2>
+                <h2 className="text-3xl font-bold tracking-tight text-gray-900">
+                  {isUrdu ? 'ہمارا اسلامی تعلیمی ماحول' : 'Our Islamic Learning Environment'}
+                </h2>
                 <p className="mt-4 text-lg text-gray-600">
-                  We are committed to providing a learning environment that is not only educational but also spiritually uplifting and rooted in Islamic values.
+                  {isUrdu 
+                    ? 'ہم ایک ایسا تعلیمی ماحول فراہم کرنے کے لیے پرعزم ہیں جو نہ صرف تعلیمی ہو بلکہ روحانی طور پر ترقی دینے والا اور اسلامی اقدار میں جڑا ہو۔'
+                    : 'We are committed to providing a learning environment that is not only educational but also spiritually uplifting and rooted in Islamic values.'}
                 </p>
                 <ul className="mt-8 space-y-6">
-                  <li className="flex items-start">
-                    <span className="material-symbols-outlined text-primary text-2xl mr-4 mt-1">security</span>
-                    <div>
-                      <h5 className="font-bold text-gray-900">Safe & Respectful Atmosphere</h5>
-                      <p className="text-gray-600">A secure and encouraging space for all students to learn and grow.</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="material-symbols-outlined text-primary text-2xl mr-4 mt-1">person</span>
-                    <div>
-                      <h5 className="font-bold text-gray-900">One-on-One Attention</h5>
-                      <p className="text-gray-600">Personalized classes to cater to the individual pace and needs of each student.</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="material-symbols-outlined text-primary text-2xl mr-4 mt-1">school</span>
-                    <div>
-                      <h5 className="font-bold text-gray-900">Adherence to Islamic Principles</h5>
-                      <p className="text-gray-600">All teaching and interactions are conducted in accordance with Islamic etiquette.</p>
-                    </div>
-                  </li>
+                  {learningFeatures.map((feature, index) => (
+                    <li key={index} className={`flex items-start ${isUrdu ? 'flex-row-reverse text-right' : ''}`}>
+                      <span className={`material-symbols-outlined text-primary text-2xl ${isUrdu ? 'ml-4' : 'mr-4'} mt-1`}>{feature.icon}</span>
+                      <div>
+                        <h5 className="font-bold text-gray-900">{feature.title}</h5>
+                        <p className="text-gray-600">{feature.description}</p>
+                      </div>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </AnimatedSection>
@@ -247,10 +345,12 @@ const AboutPage = () => {
         <div className="mt-16 md:mt-24">
           <AnimatedSection>
             <h2 className="text-center text-3xl font-bold tracking-tight text-gray-900">
-              Our Esteemed Teachers
+              {isUrdu ? 'ہمارے معزز اساتذہ' : 'Our Esteemed Teachers'}
             </h2>
             <p className="text-center text-gray-600 mt-2 max-w-2xl mx-auto">
-              Learn from highly qualified and experienced teachers who are certified with Ijazah.
+              {isUrdu 
+                ? 'انتہائی اہل اور تجربہ کار اساتذہ سے سیکھیں جو اجازت کے حامل ہیں۔'
+                : 'Learn from highly qualified and experienced teachers who are certified with Ijazah.'}
             </p>
           </AnimatedSection>
           <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -263,23 +363,27 @@ const AboutPage = () => {
         {/* CTA */}
         <AnimatedSection className="mt-16 md:mt-24">
           <div className="text-center bg-primary/5 rounded-2xl p-10">
-            <h2 className="text-3xl font-bold text-gray-900">Ready to Start Learning?</h2>
+            <h2 className="text-3xl font-bold text-gray-900">
+              {isUrdu ? 'سیکھنا شروع کرنے کے لیے تیار ہیں؟' : 'Ready to Start Learning?'}
+            </h2>
             <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-              Join our academy today and begin your journey towards understanding the Holy Quran.
+              {isUrdu 
+                ? 'آج ہی ہماری اکیڈمی میں شامل ہوں اور قرآن پاک کو سمجھنے کی طرف اپنا سفر شروع کریں۔'
+                : 'Join our academy today and begin your journey towards understanding the Holy Quran.'}
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-4">
-              <a 
-                href="/registration"
+              <Link 
+                to="/registration"
                 className="flex h-12 items-center justify-center rounded-lg bg-primary px-8 text-base font-bold text-white shadow-lg hover:scale-105 transition-transform"
               >
-                Register Now
-              </a>
-              <a 
-                href="/contact"
+                {isUrdu ? 'ابھی رجسٹر کریں' : 'Register Now'}
+              </Link>
+              <Link 
+                to="/contact"
                 className="flex h-12 items-center justify-center rounded-lg bg-white border border-primary px-8 text-base font-bold text-primary shadow-lg hover:scale-105 transition-transform"
               >
-                Contact Us
-              </a>
+                {isUrdu ? 'ہم سے رابطہ کریں' : 'Contact Us'}
+              </Link>
             </div>
           </div>
         </AnimatedSection>
