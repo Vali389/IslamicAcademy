@@ -47,11 +47,11 @@ const Footer = () => {
           <div>
             <h4 className="font-bold text-white mb-4 tracking-wide">Quick Links</h4>
             <ul className="space-y-3 text-sm">
-              <li><Link className="text-gray-400 hover:text-primary transition-colors" to="/">Home</Link></li>
-              <li><Link className="text-gray-400 hover:text-primary transition-colors" to="/about">About Us</Link></li>
-              <li><Link className="text-gray-400 hover:text-primary transition-colors" to="/courses">Our Courses</Link></li>
-              <li><Link className="text-gray-400 hover:text-primary transition-colors" to="/fees">Fee Structure</Link></li>
-              <li><Link className="text-gray-400 hover:text-primary transition-colors" to="/registration">Registration</Link></li>
+              <li><Link className="text-gray-400 hover:text-primary transition-colors" to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Home</Link></li>
+              <li><Link className="text-gray-400 hover:text-primary transition-colors" to="/about" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>About Us</Link></li>
+              <li><Link className="text-gray-400 hover:text-primary transition-colors" to="/courses" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Our Courses</Link></li>
+              <li><Link className="text-gray-400 hover:text-primary transition-colors" to="/fees" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Fee Structure</Link></li>
+              <li><Link className="text-gray-400 hover:text-primary transition-colors" to="/registration" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Registration</Link></li>
             </ul>
           </div>
 
@@ -59,11 +59,11 @@ const Footer = () => {
           <div>
             <h4 className="font-bold text-white mb-4 tracking-wide">Our Courses</h4>
             <ul className="space-y-3 text-sm">
-              <li><a className="text-gray-400 hover:text-primary transition-colors" href="#">Quran Reading (Nazra)</a></li>
-              <li><a className="text-gray-400 hover:text-primary transition-colors" href="#">Quran Memorization (Hifz)</a></li>
-              <li><a className="text-gray-400 hover:text-primary transition-colors" href="#">Tajweed Rules</a></li>
-              <li><a className="text-gray-400 hover:text-primary transition-colors" href="#">Islamic Studies</a></li>
-              <li><a className="text-gray-400 hover:text-primary transition-colors" href="#">Arabic Language</a></li>
+              <li><Link className="text-gray-400 hover:text-primary transition-colors" to="/courses" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Quran Reading (Nazra)</Link></li>
+              <li><Link className="text-gray-400 hover:text-primary transition-colors" to="/courses" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Quran Memorization (Hifz)</Link></li>
+              <li><Link className="text-gray-400 hover:text-primary transition-colors" to="/courses" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Tajweed Rules</Link></li>
+              <li><Link className="text-gray-400 hover:text-primary transition-colors" to="/courses" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Islamic Studies</Link></li>
+              <li><Link className="text-gray-400 hover:text-primary transition-colors" to="/courses" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Arabic Language</Link></li>
             </ul>
           </div>
 
@@ -77,7 +77,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <span className="material-symbols-outlined text-primary text-lg">call</span>
-                <span>+1 (123) 456-7890</span>
+                <a href="tel:+919866763270" className="hover:text-primary transition-colors">+91 98667 63270</a>
               </li>
               <li className="flex items-center gap-3">
                 <span className="material-symbols-outlined text-primary text-lg">schedule</span>

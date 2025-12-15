@@ -7,7 +7,7 @@ const contactCards = [
     id: 1,
     icon: 'chat',
     title: 'WhatsApp',
-    info: '+1 (123) 456-7890',
+    info: '+91 98667 63270',
     color: 'bg-green-500',
   },
   {
@@ -206,7 +206,7 @@ const ContactPage = () => {
 
         {/* Floating WhatsApp Button */}
         <a 
-          href="https://wa.me/11234567890" 
+          href="https://wa.me/919866763270" 
           target="_blank" 
           rel="noopener noreferrer"
           className="fixed bottom-20 right-6 flex items-center justify-center w-14 h-14 bg-green-500 rounded-full shadow-lg hover:scale-110 transition-all z-40"

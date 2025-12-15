@@ -17,34 +17,54 @@ const Header = () => {
         </Link>
 
         {/* Navigation */}
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-1 md:flex">
           <Link 
             to="/" 
-            className={`text-sm font-medium hover:text-primary ${isActive('/') ? 'text-primary font-bold' : ''}`}
+            className={`text-sm font-medium px-4 py-2 rounded-sm transition-all duration-200 ${
+              isActive('/') 
+                ? 'bg-primary text-white font-bold shadow-md' 
+                : 'text-gray-700 hover:bg-primary/10 hover:text-primary'
+            }`}
           >
             Home
           </Link>
           <Link 
             to="/about" 
-            className={`text-sm font-medium hover:text-primary ${isActive('/about') ? 'text-primary font-bold' : ''}`}
+            className={`text-sm font-medium px-4 py-2 rounded-sm transition-all duration-200 ${
+              isActive('/about') 
+                ? 'bg-primary text-white font-bold shadow-md' 
+                : 'text-gray-700 hover:bg-primary/10 hover:text-primary'
+            }`}
           >
             About
           </Link>
           <Link 
             to="/courses" 
-            className={`text-sm font-medium hover:text-primary ${isActive('/courses') ? 'text-primary font-bold' : ''}`}
+            className={`text-sm font-medium px-4 py-2 rounded-sm transition-all duration-200 ${
+              isActive('/courses') 
+                ? 'bg-primary text-white font-bold shadow-md' 
+                : 'text-gray-700 hover:bg-primary/10 hover:text-primary'
+            }`}
           >
             Courses
           </Link>
           <Link 
             to="/fees" 
-            className={`text-sm font-medium hover:text-primary ${isActive('/fees') ? 'text-primary font-bold' : ''}`}
+            className={`text-sm font-medium px-4 py-2 rounded-sm transition-all duration-200 ${
+              isActive('/fees') 
+                ? 'bg-primary text-white font-bold shadow-md' 
+                : 'text-gray-700 hover:bg-primary/10 hover:text-primary'
+            }`}
           >
             Fees
           </Link>
           <Link 
             to="/contact" 
-            className={`text-sm font-medium hover:text-primary ${isActive('/contact') ? 'text-primary font-bold' : ''}`}
+            className={`text-sm font-medium px-4 py-2 rounded-sm transition-all duration-200 ${
+              isActive('/contact') 
+                ? 'bg-primary text-white font-bold shadow-md' 
+                : 'text-gray-700 hover:bg-primary/10 hover:text-primary'
+            }`}
           >
             Contact
           </Link>
@@ -85,9 +105,13 @@ const Header = () => {
           </Link>
 
           {/* Call Button */}
-          <button className="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-primary/20 text-primary">
+          <a 
+            href="tel:+919866763270"
+            className="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-lg bg-primary/20 text-primary hover:bg-primary hover:text-white transition-colors"
+            title="Call: +91 98667 63270"
+          >
             <span className="material-symbols-outlined">call</span>
-          </button>
+          </a>
         </div>
       </div>
     </header>
