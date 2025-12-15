@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { LanguageProvider } from './context/LanguageContext';
+import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -12,11 +12,15 @@ import FeesPage from './pages/FeesPage';
 import RegistrationPage from './pages/RegistrationPage';
 import LoginPage from './pages/LoginPage';
 
-function App() {
+function AppContent() {
+  const { isUrdu } = useLanguage();
+  
   return (
-    <LanguageProvider>
-      <Router>
-        <div className="relative flex min-h-screen w-full flex-col overflow-x-hidden font-display text-[#0d1b12]" style={{ backgroundColor: '#ffffff' }}>
+    <div 
+      className="relative flex min-h-screen w-full flex-col overflow-x-hidden font-display text-[#0d1b12]" 
+      style={{ backgroundColor: '#ffffff' }}
+      dir={isUrdu ? 'rtl' : 'ltr'}
+    >
           <Header />
           
           <main className="flex w-full flex-col items-center flex-1">
@@ -33,10 +37,18 @@ function App() {
             </div>
           </main>
 
-          <Footer />
-          <ScrollToTop />
-          <WhatsAppButton />
-        </div>
+        <Footer />
+        <ScrollToTop />
+        <WhatsAppButton />
+      </div>
+  );
+}
+
+function App() {
+  return (
+    <LanguageProvider>
+      <Router>
+        <AppContent />
       </Router>
     </LanguageProvider>
   );
