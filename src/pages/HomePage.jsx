@@ -292,6 +292,162 @@ const TrustBadges = () => {
   );
 };
 
+// FAQ Section
+const FAQSection = () => {
+  const { isUrdu } = useLanguage();
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const faqs = isUrdu ? [
+    {
+      question: 'مفت ٹرائل کلاس کیسے بک کروں؟',
+      answer: 'آپ ہماری ویب سائٹ پر رجسٹریشن فارم بھر کر یا واٹس ایپ (+91 98667 63270) پر رابطہ کر کے مفت ٹرائل کلاس بک کر سکتے ہیں۔ ہم ۲۴ گھنٹے کے اندر آپ سے رابطہ کریں گے۔'
+    },
+    {
+      question: 'کلاسز کا وقت کیا ہے؟',
+      answer: 'ہماری کلاسز ۲۴/۷ دستیاب ہیں۔ آپ اپنی سہولت کے مطابق کوئی بھی وقت منتخب کر سکتے ہیں۔ جمعہ کا دن چھٹی ہے۔'
+    },
+    {
+      question: 'کیا مرد اور خواتین اساتذہ دونوں دستیاب ہیں؟',
+      answer: 'جی ہاں، ہمارے پاس مستند مرد اور خواتین اساتذہ دونوں موجود ہیں۔ آپ اپنی پسند کے مطابق استاد منتخب کر سکتے ہیں۔'
+    },
+    {
+      question: 'فیس کی ادائیگی کیسے ہوگی؟',
+      answer: 'آپ UPI، بینک ٹرانسفر، یا دیگر آن لائن طریقوں سے فیس ادا کر سکتے ہیں۔ تفصیلات کے لیے ہم سے رابطہ کریں۔'
+    },
+    {
+      question: 'کیا سرٹیفکیٹ ملے گا؟',
+      answer: 'جی ہاں، کورس مکمل کرنے پر آپ کو تصدیق شدہ سرٹیفکیٹ دیا جائے گا جو آپ کی کامیابی کی دلیل ہوگا۔'
+    },
+  ] : [
+    {
+      question: 'How do I book a free trial class?',
+      answer: 'You can book a free trial class by filling out the registration form on our website or by contacting us on WhatsApp (+91 98667 63270). We will get back to you within 24 hours.'
+    },
+    {
+      question: 'What are the class timings?',
+      answer: 'Our classes are available 24/7. You can choose any time that suits your convenience. Friday is a holiday.'
+    },
+    {
+      question: 'Are both male and female teachers available?',
+      answer: 'Yes, we have qualified male and female teachers available. You can choose a teacher based on your preference.'
+    },
+    {
+      question: 'How can I pay the fees?',
+      answer: 'You can pay fees via UPI, bank transfer, or other online payment methods. Contact us for more details.'
+    },
+    {
+      question: 'Will I get a certificate?',
+      answer: 'Yes, upon course completion, you will receive a verified certificate as proof of your achievement.'
+    },
+  ];
+
+  return (
+    <section className="py-16 px-4" dir={isUrdu ? 'rtl' : 'ltr'}>
+      <AnimatedSection className="text-center mb-12">
+        <h2 className="text-4xl font-bold tracking-tight text-navy">
+          {isUrdu ? 'اکثر پوچھے گئے سوالات' : 'Frequently Asked Questions'}
+        </h2>
+        <p className="mt-4 max-w-3xl mx-auto text-gray-600">
+          {isUrdu 
+            ? 'آپ کے سوالات کے جوابات یہاں ملیں گے۔ مزید سوالات کے لیے ہم سے رابطہ کریں۔'
+            : 'Find answers to common questions. Contact us for any other queries.'}
+        </p>
+      </AnimatedSection>
+
+      <div className="max-w-3xl mx-auto space-y-4">
+        {faqs.map((faq, index) => (
+          <AnimatedSection key={index} delay={index * 100}>
+            <div className="bg-white rounded-xl border border-primary/20 shadow-sm overflow-hidden hover-lift">
+              <button
+                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                className={`w-full px-6 py-5 flex items-center justify-between text-left ${isUrdu ? 'flex-row-reverse' : ''}`}
+              >
+                <span className="font-bold text-gray-900 text-lg">{faq.question}</span>
+                <span className={`material-symbols-outlined text-primary transition-transform ${openIndex === index ? 'rotate-180' : ''}`}>
+                  expand_more
+                </span>
+              </button>
+              {openIndex === index && (
+                <div className="px-6 pb-5 text-gray-600 leading-relaxed">
+                  {faq.answer}
+                </div>
+              )}
+            </div>
+          </AnimatedSection>
+        ))}
+      </div>
+
+      {/* Contact for more questions */}
+      <AnimatedSection className="mt-10 text-center">
+        <p className="text-gray-600">
+          {isUrdu ? 'مزید سوالات ہیں؟' : 'Have more questions?'}
+        </p>
+        <a 
+          href="mailto:nisbathacdemy@gmail.com"
+          className="inline-flex items-center gap-2 mt-2 text-primary font-bold hover:underline"
+        >
+          <span className="material-symbols-outlined">mail</span>
+          nisbathacdemy@gmail.com
+        </a>
+      </AnimatedSection>
+    </section>
+  );
+};
+
+// Newsletter Section
+const NewsletterSection = () => {
+  const { isUrdu } = useLanguage();
+  const [email, setEmail] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert(isUrdu ? 'شکریہ! آپ کو جلد اپ ڈیٹس ملیں گی۔' : 'Thank you! You will receive updates soon.');
+    setEmail('');
+  };
+
+  return (
+    <section 
+      className="py-12"
+      style={{ marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', width: '100vw', backgroundColor: '#0d1b12' }}
+    >
+      <div className="max-w-4xl mx-auto px-4 text-center" dir={isUrdu ? 'rtl' : 'ltr'}>
+        <AnimatedSection>
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <span className="material-symbols-outlined text-primary text-3xl">mail</span>
+            <h2 className="text-2xl font-bold text-white">
+              {isUrdu ? 'ہماری اپ ڈیٹس حاصل کریں' : 'Get Updates & Offers'}
+            </h2>
+          </div>
+          <p className="text-white/70 mb-6">
+            {isUrdu 
+              ? 'نئے کورسز، خصوصی پیشکشوں اور اسلامی تعلیمات کے بارے میں اپ ڈیٹس حاصل کریں۔'
+              : 'Subscribe to receive updates about new courses, special offers, and Islamic teachings.'}
+          </p>
+          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder={isUrdu ? 'آپ کا ای میل' : 'Your email address'}
+              required
+              className="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-primary"
+            />
+            <button
+              type="submit"
+              className="px-6 py-3 rounded-lg bg-primary text-white font-bold hover:scale-105 transition-transform"
+            >
+              {isUrdu ? 'سبسکرائب کریں' : 'Subscribe'}
+            </button>
+          </form>
+          <p className="text-white/50 text-sm mt-4">
+            {isUrdu ? 'ہم آپ کی معلومات کو محفوظ رکھتے ہیں۔' : 'We respect your privacy and keep your information safe.'}
+          </p>
+        </AnimatedSection>
+      </div>
+    </section>
+  );
+};
+
 // CTA Section with better colors
 const CTASection = () => {
   const { isUrdu } = useLanguage();
@@ -354,6 +510,8 @@ const HomePage = () => {
       <CoursesSection />
       <HowItWorks />
       <TestimonialsCarousel />
+      <FAQSection />
+      <NewsletterSection />
       <CTASection />
     </div>
   );
