@@ -99,7 +99,7 @@ const HeroSection = () => {
             </div>
             <div className="flex items-center gap-2">
               <span className="material-symbols-outlined text-primary">check_circle</span>
-              <span>{isUrdu ? 'جمعہ چھٹی' : 'Friday Holiday'}</span>
+              <span>{isUrdu ? 'جمعہ، ہفتہ چھٹی' : 'Fri & Sat Holiday'}</span>
             </div>
           </div>
         </div>

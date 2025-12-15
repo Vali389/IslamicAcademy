@@ -97,7 +97,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <span className="material-symbols-outlined text-primary text-lg">event_busy</span>
-                <span>{isUrdu ? 'جمعہ چھٹی' : 'Friday Holiday'}</span>
+                <span>{isUrdu ? 'جمعہ، ہفتہ چھٹی' : 'Fri & Sat Holiday'}</span>
               </li>
               <li className="flex items-center gap-3">
                 <span className="material-symbols-outlined text-primary text-lg">language</span>

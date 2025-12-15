@@ -16,13 +16,13 @@ const FeesPage = () => {
       yearlyPeriod: isUrdu ? 'فی سال' : '/year',
       popular: false,
       features: isUrdu ? [
-        'ہفتے میں ۶ دن (جمعہ چھٹی)',
+        'ہفتے میں ۵ دن (جمعہ، ہفتہ چھٹی)',
         'انفرادی کلاسز',
         'مستند اساتذہ',
         'صحیح تلفظ',
         'بنیادی تجوید',
       ] : [
-        '6 Days/Week (Friday Holiday)',
+        '5 Days/Week (Fri & Sat Holiday)',
         'One-on-One Classes',
         'Qualified Teachers',
         'Correct Pronunciation',
@@ -38,13 +38,13 @@ const FeesPage = () => {
       yearlyPeriod: isUrdu ? 'فی سال' : '/year',
       popular: true,
       features: isUrdu ? [
-        'ہفتے میں ۶ دن (جمعہ چھٹی)',
+        'ہفتے میں ۵ دن (جمعہ، ہفتہ چھٹی)',
         'انفرادی کلاسز',
         'اعلی تجوید کے قواعد',
         'مخارج الحروف',
         'مستند قاری',
       ] : [
-        '6 Days/Week (Friday Holiday)',
+        '5 Days/Week (Fri & Sat Holiday)',
         'One-on-One Classes',
         'Advanced Tajweed Rules',
         'Articulation Points',
@@ -60,13 +60,13 @@ const FeesPage = () => {
       yearlyPeriod: isUrdu ? 'فی سال' : '/year',
       popular: false,
       features: isUrdu ? [
-        'ہفتے میں ۶ دن (جمعہ چھٹی)',
+        'ہفتے میں ۵ دن (جمعہ، ہفتہ چھٹی)',
         'ماہر قاری سے سیکھیں',
         'تلاوت کا فن',
         'مختلف قراءات',
         'اعلی تجوید',
       ] : [
-        '6 Days/Week (Friday Holiday)',
+        '5 Days/Week (Fri & Sat Holiday)',
         'Learn from Expert Qari',
         'Art of Recitation',
         'Different Qiraat',
@@ -82,13 +82,13 @@ const FeesPage = () => {
       yearlyPeriod: isUrdu ? 'فی سال' : '/year',
       popular: false,
       features: isUrdu ? [
-        'ہفتے میں ۶ دن (جمعہ چھٹی)',
+        'ہفتے میں ۵ دن (جمعہ، ہفتہ چھٹی)',
         'نحو اور صرف',
         'جملے کی ساخت',
         'قرآنی الفاظ',
         'بنیادی عربی',
       ] : [
-        '6 Days/Week (Friday Holiday)',
+        '5 Days/Week (Fri & Sat Holiday)',
         'Nahw & Sarf',
         'Sentence Structure',
         'Quranic Vocabulary',
@@ -106,7 +106,7 @@ const FeesPage = () => {
       popular: true,
       special: true,
       features: isUrdu ? [
-        'ہفتے میں ۶ دن (جمعہ چھٹی)',
+        'ہفتے میں ۵ دن (جمعہ، ہفتہ چھٹی)',
         'مخصوص حفظ کوچ',
         'ذاتی منصوبہ',
         'ہفتہ وار جائزے',
@@ -114,7 +114,7 @@ const FeesPage = () => {
         'دہرائی کا نظام',
         'سرٹیفکیٹ',
       ] : [
-        '6 Days/Week (Friday Holiday)',
+        '5 Days/Week (Fri & Sat Holiday)',
         'Dedicated Hifz Coach',
         'Personalized Plan',
         'Weekly Assessments',
@@ -229,8 +229,8 @@ const FeesPage = () => {
             </div>
             <p className="text-yellow-700 text-sm">
               {isUrdu 
-                ? 'تمام کورسز ہفتے میں ۶ دن چلتے ہیں۔ جمعہ کا دن چھٹی کا دن ہے۔' 
-                : 'All courses run 6 days a week. Friday is a holiday for all students.'}
+                ? 'تمام کورسز ہفتے میں ۵ دن چلتے ہیں۔ جمعہ اور ہفتہ چھٹی ہے۔' 
+                : 'All courses run 5 days a week. Friday and Saturday are holidays.'}
             </p>
           </div>
         </AnimatedSection>

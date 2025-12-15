@@ -40,7 +40,7 @@ const WhyChooseUs = () => {
     {
       icon: 'event_busy',
       title: 'جمعہ چھٹی',
-      description: 'ہفتے میں ۶ دن کلاسز۔ جمعہ کا دن چھٹی کا دن ہے۔',
+      description: 'ہفتے میں ۵ دن کلاسز۔ جمعہ اور ہفتہ چھٹی۔',
     },
   ] : [
     {
@@ -70,8 +70,8 @@ const WhyChooseUs = () => {
     },
     {
       icon: 'event_busy',
-      title: 'Friday Holiday',
-      description: '6 days a week classes. Friday is a holiday for all students.',
+      title: 'Fri & Sat Holiday',
+      description: '5 days a week classes. Friday & Saturday holiday.',
     },
   ];
 
@@ -510,7 +510,6 @@ const HomePage = () => {
       <CoursesSection />
       <HowItWorks />
       <TestimonialsCarousel />
-      <FAQSection />
       <NewsletterSection />
       <CTASection />
     </div>

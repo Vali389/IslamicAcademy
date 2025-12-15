@@ -152,7 +152,7 @@ export const LanguageProvider = ({ children }) => {
       perMonth: isUrdu ? 'فی ماہ' : '/ month',
       perYear: isUrdu ? 'فی سال' : '/ year',
       fullCourse: isUrdu ? 'مکمل کورس' : 'Full Course',
-      holiday: isUrdu ? 'جمعہ چھٹی' : 'Friday Holiday',
+      holiday: isUrdu ? 'جمعہ، ہفتہ چھٹی' : 'Fri & Sat Holiday',
     },
 
     // Contact
