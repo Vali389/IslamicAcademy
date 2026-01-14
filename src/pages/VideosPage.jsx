@@ -196,7 +196,7 @@ const VideosPage = () => {
                   : 'Subscribe to our YouTube channel for more videos and turn on notifications.'}
               </p>
               <a 
-                href="https://www.youtube.com/@nisbathacademy" 
+                href="https://www.youtube.com/@nisbath_" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-white text-red-600 px-6 py-3 rounded-xl font-bold hover:scale-105 transition-transform shadow-lg"
