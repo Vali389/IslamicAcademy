@@ -6,6 +6,19 @@ import AnimatedSection from '../components/AnimatedSection';
 const VideosPage = () => {
   const { isUrdu } = useLanguage();
   const [selectedVideo, setSelectedVideo] = useState(null);
+  const [showThankYou, setShowThankYou] = useState(false);
+
+  const handleSubscribe = () => {
+    setShowThankYou(true);
+    // Redirect to YouTube after showing thank you message
+    setTimeout(() => {
+      window.open('https://www.youtube.com/@nisbath_?sub_confirmation=1', '_blank');
+    }, 2000);
+  };
+
+  const closeThankYou = () => {
+    setShowThankYou(false);
+  };
 
   const videos = [
     {
@@ -195,19 +208,65 @@ const VideosPage = () => {
                   ? 'مزید ویڈیوز کے لیے ہمارا یوٹیوب چینل سبسکرائب کریں اور نوٹیفیکیشنز آن کریں۔'
                   : 'Subscribe to our YouTube channel for more videos and turn on notifications.'}
               </p>
-              <a 
-                href="https://www.youtube.com/@nisbath_" 
-                target="_blank" 
-                rel="noopener noreferrer"
+              <button 
+                onClick={handleSubscribe}
                 className="inline-flex items-center gap-2 bg-white text-red-600 px-6 py-3 rounded-xl font-bold hover:scale-105 transition-transform shadow-lg"
               >
                 <span className="material-symbols-outlined">subscriptions</span>
                 <span>{isUrdu ? 'سبسکرائب کریں' : 'Subscribe Now'}</span>
-              </a>
+              </button>
             </div>
           </div>
         </AnimatedSection>
       </section>
+
+      {/* Thank You Modal */}
+      {showThankYou && (
+        <div 
+          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+          onClick={closeThankYou}
+        >
+          <div 
+            className="relative bg-white rounded-3xl p-8 max-w-md text-center animate-scale-up"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button 
+              onClick={closeThankYou}
+              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+            >
+              <span className="material-symbols-outlined">close</span>
+            </button>
+
+            {/* Success Icon */}
+            <div className="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center mx-auto mb-6 animate-bounce">
+              <span className="material-symbols-outlined text-white text-4xl">favorite</span>
+            </div>
+
+            {/* Thank You Message */}
+            <h3 className={`text-2xl font-bold text-navy mb-3 ${isUrdu ? 'urdu-font-xl' : ''}`}>
+              {isUrdu ? 'سبسکرائب کرنے کا شکریہ!' : 'Thank You for Subscribing!'}
+            </h3>
+            <p className={`text-gray-600 mb-4 ${isUrdu ? 'urdu-font-base' : ''}`}>
+              {isUrdu 
+                ? 'آپ کی حمایت کا شکریہ! آپ کو یوٹیوب پر بھیجا جا رہا ہے...'
+                : 'We appreciate your support! Redirecting you to YouTube...'}
+            </p>
+
+            {/* Loading Animation */}
+            <div className="flex items-center justify-center gap-2 text-red-500">
+              <span className="material-symbols-outlined animate-spin">progress_activity</span>
+              <span className={`text-sm ${isUrdu ? 'urdu-font-sm' : ''}`}>
+                {isUrdu ? 'ری ڈائریکٹ ہو رہا ہے...' : 'Redirecting...'}
+              </span>
+            </div>
+
+            {/* Decorative Elements */}
+            <div className="absolute -top-4 -left-4 w-16 h-16 bg-red-100 rounded-full opacity-50"></div>
+            <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-primary/20 rounded-full opacity-50"></div>
+          </div>
+        </div>
+      )}
 
       {/* Video Modal */}
       {selectedVideo && (
