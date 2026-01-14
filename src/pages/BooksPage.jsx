@@ -6,13 +6,13 @@ import AnimatedSection from '../components/AnimatedSection';
 // Import PDFs
 import gunaho from '../assets/gunaho.pdf';
 import molanaMujahid from '../assets/Molana Mujahid Sahb last file (2).pdf';
-import screenshot1 from '../assets/Screenshot 2024-08-19 at 9.53.49 PM.pdf';
-import screenshot2 from '../assets/Screenshot 2025-08-12 at 5.49.48 PM.pdf';
-import screenshot3 from '../assets/Screenshot 2025-08-12 at 5.50.32 PM.pdf';
-import screenshot4 from '../assets/Screenshot 2025-08-12 at 5.50.55 PM.pdf';
-import screenshot5 from '../assets/Screenshot 2025-08-12 at 5.51.12 PM.pdf';
-import screenshot6 from '../assets/Screenshot 2025-08-12 at 5.51.34 PM.pdf';
-import screenshot7 from '../assets/Screenshot 2025-08-12 at 5.52.05 PM.pdf';
+import islamicTeachings from '../assets/islamic-teachings.pdf';
+import islamicBook1 from '../assets/islamic-book-1.pdf';
+import islamicBook2 from '../assets/islamic-book-2.pdf';
+import islamicBook3 from '../assets/islamic-book-3.pdf';
+import islamicBook4 from '../assets/islamic-book-4.pdf';
+import islamicBook5 from '../assets/islamic-book-5.pdf';
+import islamicBook6 from '../assets/islamic-book-6.pdf';
 
 const BooksPage = () => {
   const { isUrdu } = useLanguage();
@@ -39,7 +39,7 @@ const BooksPage = () => {
         ? 'مولانا مجاہد صاحب کی آخری تحریر'
         : 'Final writings of Molana Mujahid Sahb',
       file: molanaMujahid,
-      fileName: 'Molana Mujahid Sahb.pdf',
+      fileName: 'Molana-Mujahid-Sahb.pdf',
       icon: 'menu_book',
       color: 'from-blue-500 to-indigo-600',
     },
@@ -50,7 +50,7 @@ const BooksPage = () => {
       description: isUrdu 
         ? 'قرآن و حدیث کی روشنی میں اسلامی تعلیمات'
         : 'Islamic teachings in the light of Quran and Hadith',
-      file: screenshot1,
+      file: islamicTeachings,
       fileName: 'Islamic-Teachings-1.pdf',
       icon: 'local_library',
       color: 'from-purple-500 to-violet-600',
@@ -62,7 +62,7 @@ const BooksPage = () => {
       description: isUrdu 
         ? 'نماز کے صحیح طریقے کی مکمل رہنمائی'
         : 'Complete guide to the correct method of prayer',
-      file: screenshot2,
+      file: islamicBook1,
       fileName: 'Method-of-Prayer.pdf',
       icon: 'mosque',
       color: 'from-amber-500 to-orange-600',
@@ -74,7 +74,7 @@ const BooksPage = () => {
       description: isUrdu 
         ? 'قرآن پاک کی صحیح تلاوت کے قواعد'
         : 'Rules for correct recitation of Holy Quran',
-      file: screenshot3,
+      file: islamicBook2,
       fileName: 'Tajweed-Rules.pdf',
       icon: 'record_voice_over',
       color: 'from-rose-500 to-pink-600',
@@ -86,7 +86,7 @@ const BooksPage = () => {
       description: isUrdu 
         ? 'روزمرہ کی اہم دعائیں'
         : 'Important daily prayers and supplications',
-      file: screenshot4,
+      file: islamicBook3,
       fileName: 'Collection-of-Duas.pdf',
       icon: 'volunteer_activism',
       color: 'from-cyan-500 to-sky-600',
@@ -98,7 +98,7 @@ const BooksPage = () => {
       description: isUrdu 
         ? 'نبی کریم ﷺ کی مختصر سیرت'
         : 'Brief biography of Prophet Muhammad ﷺ',
-      file: screenshot5,
+      file: islamicBook4,
       fileName: 'Life-of-Prophet.pdf',
       icon: 'history_edu',
       color: 'from-lime-500 to-green-600',
@@ -110,7 +110,7 @@ const BooksPage = () => {
       description: isUrdu 
         ? 'رمضان المبارک کی مکمل رہنمائی'
         : 'Complete guide for the blessed month of Ramadan',
-      file: screenshot6,
+      file: islamicBook5,
       fileName: 'Ramadan-Guide.pdf',
       icon: 'nights_stay',
       color: 'from-fuchsia-500 to-purple-600',
@@ -122,7 +122,7 @@ const BooksPage = () => {
       description: isUrdu 
         ? 'حج اور عمرہ کی مکمل رہنمائی'
         : 'Complete guide for Hajj and Umrah',
-      file: screenshot7,
+      file: islamicBook6,
       fileName: 'Hajj-Umrah-Guide.pdf',
       icon: 'explore',
       color: 'from-teal-500 to-emerald-600',
@@ -262,4 +262,3 @@ const BooksPage = () => {
 };
 
 export default BooksPage;
-
