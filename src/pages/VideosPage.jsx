@@ -13,6 +13,7 @@ const VideosPage = () => {
     // Redirect to YouTube after showing thank you message
     setTimeout(() => {
       window.open('https://www.youtube.com/@nisbath_?sub_confirmation=1', '_blank');
+      setShowThankYou(false); // Close the modal after redirect
     }, 2000);
   };
 
