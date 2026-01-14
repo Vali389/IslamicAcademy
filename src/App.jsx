@@ -11,6 +11,8 @@ import ContactPage from './pages/ContactPage';
 import FeesPage from './pages/FeesPage';
 import RegistrationPage from './pages/RegistrationPage';
 import LoginPage from './pages/LoginPage';
+import BooksPage from './pages/BooksPage';
+import VideosPage from './pages/VideosPage';
 
 function AppContent() {
   const { isUrdu } = useLanguage();
@@ -33,6 +35,8 @@ function AppContent() {
                 <Route path="/fees" element={<FeesPage />} />
                 <Route path="/registration" element={<RegistrationPage />} />
                 <Route path="/login" element={<LoginPage />} />
+                <Route path="/books" element={<BooksPage />} />
+                <Route path="/videos" element={<VideosPage />} />
               </Routes>
             </div>
           </main>

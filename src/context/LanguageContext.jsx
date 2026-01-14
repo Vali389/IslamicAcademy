@@ -31,6 +31,8 @@ export const LanguageProvider = ({ children }) => {
       contact: isUrdu ? 'رابطہ' : 'Contact',
       login: isUrdu ? 'لاگ ان' : 'Login',
       bookDemo: isUrdu ? 'مفت ڈیمو بک کریں' : 'Book Free Demo',
+      books: isUrdu ? 'کتب' : 'Books',
+      videos: isUrdu ? 'ویڈیوز' : 'Videos',
     },
     
     // Hero Section

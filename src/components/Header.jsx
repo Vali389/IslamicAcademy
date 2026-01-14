@@ -70,6 +70,26 @@ const Header = () => {
           >
             {t.nav.contact}
           </Link>
+          <Link 
+            to="/books" 
+            className={`text-sm font-medium px-4 py-2 rounded-sm transition-all duration-200 ${
+              isActive('/books') 
+                ? 'bg-primary text-white font-bold shadow-md' 
+                : 'text-gray-700 hover:bg-primary/10 hover:text-primary'
+            }`}
+          >
+            {t.nav.books}
+          </Link>
+          <Link 
+            to="/videos" 
+            className={`text-sm font-medium px-4 py-2 rounded-sm transition-all duration-200 ${
+              isActive('/videos') 
+                ? 'bg-primary text-white font-bold shadow-md' 
+                : 'text-gray-700 hover:bg-primary/10 hover:text-primary'
+            }`}
+          >
+            {t.nav.videos}
+          </Link>
         </nav>
 
         {/* Actions */}
@@ -173,6 +193,24 @@ const Header = () => {
               }`}
             >
               {t.nav.contact}
+            </Link>
+            <Link 
+              to="/books" 
+              onClick={() => setMobileMenuOpen(false)}
+              className={`text-sm font-medium px-4 py-3 rounded-lg transition-all ${
+                isActive('/books') ? 'bg-primary text-white' : 'text-gray-700 hover:bg-primary/10'
+              }`}
+            >
+              {t.nav.books}
+            </Link>
+            <Link 
+              to="/videos" 
+              onClick={() => setMobileMenuOpen(false)}
+              className={`text-sm font-medium px-4 py-3 rounded-lg transition-all ${
+                isActive('/videos') ? 'bg-primary text-white' : 'text-gray-700 hover:bg-primary/10'
+              }`}
+            >
+              {t.nav.videos}
             </Link>
             <Link 
               to="/registration" 
